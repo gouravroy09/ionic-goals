@@ -1,0 +1,8 @@
+{
+  "name": "ionic-goals",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "84af509e"
+}
