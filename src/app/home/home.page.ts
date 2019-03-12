@@ -11,7 +11,7 @@ import * as firebase from 'Firebase';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  infos : Array<any>;
+  infos : [];
   ref = firebase.database().ref('infos/');
 
   constructor(private route: ActivatedRoute, public router: Router, public alertController: AlertController) {
