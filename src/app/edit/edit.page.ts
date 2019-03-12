@@ -3,12 +3,13 @@ import * as firebase from 'Firebase';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.page.html',
-  styleUrls: ['./detail.page.scss'],
+  selector: 'app-edit',
+  templateUrl: './edit.page.html',
+  styleUrls: ['./edit.page.scss'],
 })
-export class DetailPage implements OnInit {
+export class EditPage implements OnInit {
 
   ref = firebase.database().ref('infos/');
 infoForm: FormGroup;

@@ -11,7 +11,7 @@ import * as firebase from 'Firebase';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  infos = [];
+  infos : Array<any>;
   ref = firebase.database().ref('infos/');
 
   constructor(private route: ActivatedRoute, public router: Router, public alertController: AlertController) {
@@ -20,32 +20,32 @@ export class HomePage {
       this.infos = snapshotToArray(resp);
     });
   }
-  edit(key) {
-    this.router.navigate(['/edit/' + key]);
-  }
-  async delete(key) {
-    const alert = await this.alertController.create({
-      header: 'Confirm!',
-      message: 'Are you sure want to delete this info?',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('cancel');
-          }
-        }, {
-          text: 'Okay',
-          handler: () => {
-            firebase.database().ref('infos/' + key).remove();
-          }
-        }
-      ]
-    });
+  // edit(key) {
+  //   this.router.navigate(['/edit/' + key]);
+  // }
+  // async delete(key) {
+  //   const alert = await this.alertController.create({
+  //     header: 'Confirm!',
+  //     message: 'Are you sure want to delete this info?',
+  //     buttons: [
+  //       {
+  //         text: 'Cancel',
+  //         role: 'cancel',
+  //         cssClass: 'secondary',
+  //         handler: (blah) => {
+  //           console.log('cancel');
+  //         }
+  //       }, {
+  //         text: 'Okay',
+  //         handler: () => {
+  //           firebase.database().ref('infos/' + key).remove();
+  //         }
+  //       }
+  //     ]
+  //   });
 
-    await alert.present();
-  }
+  //   await alert.present();
+  // }
 
 }
 

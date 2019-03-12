@@ -3,12 +3,13 @@ import * as firebase from 'Firebase';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators, FormArray } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+
 @Component({
-  selector: 'app-detail',
-  templateUrl: './detail.page.html',
-  styleUrls: ['./detail.page.scss'],
+  selector: 'app-create',
+  templateUrl: './create.page.html',
+  styleUrls: ['./create.page.scss'],
 })
-export class DetailPage implements OnInit {
+export class CreatePage implements OnInit {
 
   ref = firebase.database().ref('infos/');
 infoForm: FormGroup;
@@ -20,7 +21,7 @@ infoForm: FormGroup;
         'info_title' : [null, Validators.required],
         'info_description' : [null, Validators.required]
       });
-this.getInfo(this.route.snapshot.paramMap.get('key'));
+//this.getInfo(this.route.snapshot.paramMap.get('key'));
 
 }
 
@@ -87,7 +88,6 @@ async deleteInfo() {
   
 }
 }
-
 export const snapshotToObject = snapshot => {
   let item = snapshot.val();
   item.key = snapshot.key;
